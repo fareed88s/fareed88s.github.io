@@ -7,7 +7,8 @@ self.addEventListener("install", (event) => {
         caches.open('aplikasiku' + ver).then((cache) => {
             console.log('mulai caching');
             return cache.addAll([
-                '/serviceworker.html',
+                '/index.html'
+                // '/serviceworker.html',
                 '/responsive.html',
                 '/promise.html',
                 '/manipulasidom.html',
