@@ -149,10 +149,10 @@
             //install
             navigator.serviceWorker.register('/sw.js').then((reg) => {
                 console.log('service Worker berhasil didaftarkan');
-                document.querySelector("#sw").innerHTML = 'berhasil';
+                //document.querySelector("#sw").innerHTML = 'berhasil';
             }).catch((err) => {
                 console.log('service worker gagal didaftarkan');
-                document.querySelector("#sw").innerHTML = 'gagal';
+                //document.querySelector("#sw").innerHTML = 'gagal';
             });
         }
     </script>
