@@ -27,6 +27,25 @@
 </head>
 
 <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB4uwWSJx19m1HypB71Awnqzrj8U4gunD4",
+    authDomain: "lat-pwa.firebaseapp.com",
+    projectId: "lat-pwa",
+    storageBucket: "lat-pwa.appspot.com",
+    messagingSenderId: "103142684709",
+    appId: "1:103142684709:web:e3f9c894fc970d62f427cc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
     <!-- navBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -39,6 +58,7 @@
                 <a class="nav-item nav-link" id="halUtama" href="#">Home </a>
                 <a class="nav-item nav-link" id="halProduk" href="#">Produk</a>
                 <a class="nav-item nav-link" id="halAtur" href="#">Pengaturan</a>
+                <a class="nav-item nav-link" id="notifikasi" href="#">Buat Notifikasi</a>
             </div>
         </div>
     </nav>

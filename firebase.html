@@ -1,0 +1,47 @@
+<html>
+    
+<head>
+    
+</head>
+<body>
+    token <p id="token"></p>
+    pesan <p id="pesan"></p>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+
+    apiKey: "AIzaSyB4uwWSJx19m1HypB71Awnqzrj8U4gunD4",
+    authDomain: "lat-pwa.firebaseapp.com",
+    projectId: "lat-pwa",
+    storageBucket: "lat-pwa.appspot.com",
+    messagingSenderId: "103142684709",
+    appId: "1:103142684709:web:e3f9c894fc970d62f427cc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const messaging = firebase.messaging();
+  let token;
+  messaging.getToken().then((token)=>{
+      if(token){
+          console.log(token);
+          document.querySelector('#token').innerHTML = token;
+      }else{
+          console.log('tidak mendapatkan token');
+      }
+  }).catch((err)=>{
+      console.log('gagal '+err);
+  })
+
+  messaging.onMessage((payload) => {
+    console.log(payload);
+    document.querySelector('#pesan').innerHTML = JSON.stringify(payload);
+  });
+  
+</script>
+
+</body>
+</html>

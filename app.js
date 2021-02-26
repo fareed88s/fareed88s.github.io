@@ -136,6 +136,25 @@ document.querySelector('#bMHapus').addEventListener('click',()=>{
     hapusData(id);
 })
 
+//cek apakah mendukung notifikasi
+if ('Notification' in window) {
+    console.log('notif didukung');
+  } else {
+    alert('notifikasi tidak didukung');
+  }
+  //minta ijin
+  Notification.requestPermission((status) => {
+   console.log('status ijin', status);
+  })
+  
+  //membuat notifikasi
+  document.querySelector('#notifikasi').addEventListener('click',()=>{
+      if(Notification.permission == 'granted'){
+          navigator.serviceWorker.getRegistration().then((reg)=>{
+              reg.showNotification('Wis madang Rung Lur?');
+          });
+      }
+  })
 
 
 
